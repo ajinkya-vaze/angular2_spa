@@ -10,8 +10,12 @@ export class PostService {
 
     }
 
-    getPosts() {
-        return this._http.get(PostService.POSTS_SERVICE_URL);
+    getPosts(filter?) {
+        let url = PostService.POSTS_SERVICE_URL;
+        if(filter && filter.userId) {
+            url += "?userId=" + filter.userId;
+        }
+        return this._http.get(url);
     }
 
     getCommentsOnPost(id) {
