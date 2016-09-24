@@ -9,8 +9,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar.component';
 import { HomeComponent } from './home.component';
 import { UsersComponent } from './users.component';
-import { AddUserComponent } from './addUser.component';
+import { UserFormComponent } from './userForm.component';
 import { PostsComponent } from './posts.component';
+import { NotFoundComponent } from './notFound.component';
 
 import { APP_ROUTING } from './app.routing';
 
@@ -33,7 +34,8 @@ import { DirtyFormGuard } from './dirtyFormGuard.service';
         HomeComponent,
         UsersComponent,
         PostsComponent,
-        AddUserComponent
+        UserFormComponent,
+        NotFoundComponent
     ],
     providers: [
         UserService,
