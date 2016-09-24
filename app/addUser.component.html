@@ -1,7 +1,7 @@
 <h1>Add a User</h1>
 <div class="row">
     <div class="col-md-6 well">
-        <form [formGroup]="form" #f="ngForm">
+        <form [formGroup]="form" #f="ngForm" (ngSubmit)="onSave()">
             <fieldset formGroupName="user">
                 <legend>User</legend>
                 <div class="form-group">
@@ -48,7 +48,7 @@
                     <input class="form-control" type="text" formControlName="zipcode">
                 </div>
             </fieldset>
-            <button class="btn btn-primary" [disabled]="!f.valid">Save</button>
+            <button class="btn btn-primary" [disabled]="!f.valid" type="submit">Save</button>
         </form>
     </div>
 </div>
