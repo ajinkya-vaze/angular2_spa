@@ -8,7 +8,7 @@ import { PostService } from './post.service';
 })
 export class PostsComponent {
     posts: any[];
-    isLoading: boolean = true;
+    postsLoading: boolean = true;
     selectedPost: any;
     selectedPostComments: any[];
     commentsLoading: boolean;
@@ -19,7 +19,7 @@ export class PostsComponent {
                 this.posts = response.json();
             },
             null,
-            () => { this.isLoading = false; }
+            () => { this.postsLoading = false; }
         );
     }
 

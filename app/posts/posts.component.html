@@ -1,7 +1,7 @@
 <h1>Posts</h1>
 <div class="row">
     <div class="col-md-6">
-        <spinner [visible]="isLoading"></spinner>
+        <spinner [visible]="postsLoading"></spinner>
         <ul class="list-group posts">
             <li class="list-group-item" *ngFor="let post of posts" (click)="onPostClick(post)">
                 {{ post.title }}
@@ -20,7 +20,7 @@
                 <div class="media" *ngFor="let comment of selectedPostComments">
                     <div class="media-left">
                         <a href="#">
-                            <img class="media-object thumbnail" src="http://lorempixel.com/90/90/nature?random={{comment.id}}">
+                            <img class="media-object thumbnail" src="http://lorempixel.com/90/90/people?random={{comment.id}}">
                         </a>
                     </div>
                     <div class="media-body">
