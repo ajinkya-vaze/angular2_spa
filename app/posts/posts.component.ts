@@ -10,6 +10,8 @@ export class PostsComponent {
     posts: any[];
     isLoading: boolean = true;
     selectedPost: any;
+    selectedPostComments: any[];
+    commentsLoading: boolean;
 
     constructor(private _postService: PostService) {
         this._postService.getPosts().subscribe(
@@ -23,5 +25,15 @@ export class PostsComponent {
 
     onPostClick(post) {
         this.selectedPost = post;
+        this.selectedPostComments = [];
+        this.commentsLoading = true;
+        this._postService.getCommentsOnPost(post.id)
+            .subscribe(
+            response => {
+                this.selectedPostComments = response.json();
+            },
+            null,
+            () => { this.commentsLoading = false }
+            );
     }
 }

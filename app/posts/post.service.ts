@@ -14,6 +14,10 @@ export class PostService {
         return this._http.get(PostService.POSTS_SERVICE_URL);
     }
 
+    getCommentsOnPost(id) {
+        return this._http.get(PostService.POSTS_SERVICE_URL + "/" + id + "/comments");
+    }
+
     // addNewUser(user) {
     //     return this._http.post(UserService.USER_SERVICE_URL, JSON.stringify(user));
     // }
