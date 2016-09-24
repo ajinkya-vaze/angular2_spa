@@ -4,16 +4,17 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PostsModule } from './posts/posts.module';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar.component';
 import { HomeComponent } from './home.component';
 import { UsersComponent } from './users.component';
 import { UserFormComponent } from './userForm.component';
-import { PostsComponent } from './posts.component';
 import { NotFoundComponent } from './notFound.component';
 
 import { APP_ROUTING } from './app.routing';
+import { POSTS_ROUTING } from './posts/posts.routing';
 
 import { UserService } from './user.service';
 import { DirtyFormGuard } from './dirtyFormGuard.service';
@@ -26,6 +27,8 @@ import { DirtyFormGuard } from './dirtyFormGuard.service';
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
+        PostsModule,
+        POSTS_ROUTING,
         APP_ROUTING
     ],
     declarations: [
@@ -33,7 +36,6 @@ import { DirtyFormGuard } from './dirtyFormGuard.service';
         NavbarComponent,
         HomeComponent,
         UsersComponent,
-        PostsComponent,
         UserFormComponent,
         NotFoundComponent
     ],
