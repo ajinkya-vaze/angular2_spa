@@ -6,6 +6,7 @@ import { PostService } from './post.service';
     template: `
     <div class="col-md-6">
     <h1>Posts</h1>
+    <i *ngIf="isLoading" class="fa fa-spinner fa-spin fa-3x"></i>
         <ul class="list-group">
             <li class="list-group-item" *ngFor="let post of posts">
             {{ post.title }}
@@ -16,12 +17,14 @@ import { PostService } from './post.service';
 })
 export class PostsComponent {
     posts: any[];
-
+    isLoading: boolean = true;
     constructor(private _postService: PostService) {
         this._postService.getPosts().subscribe(
             response => {
                 this.posts = response.json();
-            }
+            },
+            null,
+            () => { this.isLoading = false; }
         );
     }
 }
