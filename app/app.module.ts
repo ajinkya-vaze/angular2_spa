@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar.component';
@@ -21,6 +22,8 @@ import { UserService } from './user.service';
         RouterModule,
         HttpModule,
         CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
         APP_ROUTING
     ],
     declarations: [
