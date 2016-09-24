@@ -15,6 +15,7 @@ import { PostsComponent } from './posts.component';
 import { APP_ROUTING } from './app.routing';
 
 import { UserService } from './user.service';
+import { DirtyFormGuard } from './dirtyFormGuard.service';
 
 @NgModule({
     imports: [
@@ -35,7 +36,8 @@ import { UserService } from './user.service';
         AddUserComponent
     ],
     providers: [
-        UserService
+        UserService,
+        DirtyFormGuard
     ],
     bootstrap: [AppComponent]
 })
