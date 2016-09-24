@@ -19,7 +19,7 @@ export class UserService {
     }
     
     updateUser(user) {
-        return this._http.put(UserService.USER_SERVICE_URL, JSON.stringify(user));
+        return this._http.post(UserService.USER_SERVICE_URL, JSON.stringify(user));
     }
 
     getUserDetails(id) {
