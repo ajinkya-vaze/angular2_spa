@@ -25,4 +25,8 @@ export class UserService {
     getUserDetails(id) {
         return this._http.get(UserService.USER_SERVICE_URL + "/" + id);
     }
+
+    deleteUser(id) {
+        return this._http.delete(UserService.USER_SERVICE_URL + "/" + id);
+    }
 }
