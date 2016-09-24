@@ -6,7 +6,7 @@ import { PostService } from './post.service';
     template: `
     <div class="col-md-6">
     <h1>Posts</h1>
-    <i *ngIf="isLoading" class="fa fa-spinner fa-spin fa-3x"></i>
+    <spinner [visible]="isLoading"></spinner>
         <ul class="list-group">
             <li class="list-group-item" *ngFor="let post of posts">
             {{ post.title }}

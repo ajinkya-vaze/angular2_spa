@@ -1,5 +1,5 @@
 <h1>Users</h1>
-<i *ngIf="isLoading" class="fa fa-spinner fa-spin fa-3x"></i>
+<spinner [visible]="isLoading"></spinner>
 <span *ngIf="!isLoading">
     <p>
         <a class="btn btn-primary" routerLink="add">Add User</a>

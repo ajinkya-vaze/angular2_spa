@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { EmailValidator } from './email.validator';
-import { DirtyChecker } from './dirtyChecker';
-import { UserService } from './user.service';
 import { Router, ActivatedRoute } from '@angular/router';
+
+import { EmailValidator } from '../email.validator';
+import { DirtyChecker } from '../dirtyChecker';
+
+import { UserService } from './user.service';
+
 import { User } from './user';
 
 @Component({
-    templateUrl: '/app/userForm.component.html'
+    templateUrl: '/app/users/userForm.component.html'
 })
 export class UserFormComponent implements DirtyChecker, OnInit {
     form: FormGroup;
