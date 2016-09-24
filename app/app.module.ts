@@ -1,19 +1,26 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {RouterModule} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
+import { CommonModule } from '@angular/common';
 
-import {AppComponent} from './app.component';
-import {NavbarComponent} from './navbar.component';
-import {HomeComponent} from './home.component';
-import {UsersComponent} from './users.component';
-import {PostsComponent} from './posts.component';
+import { AppComponent } from './app.component';
+import { NavbarComponent } from './navbar.component';
+import { HomeComponent } from './home.component';
+import { UsersComponent } from './users.component';
+import { AddUserComponent } from './addUser.component';
+import { PostsComponent } from './posts.component';
 
-import {APP_ROUTING} from './app.routing';
+import { APP_ROUTING } from './app.routing';
+
+import { UserService } from './user.service';
 
 @NgModule({
     imports: [
         BrowserModule,
         RouterModule,
+        HttpModule,
+        CommonModule,
         APP_ROUTING
     ],
     declarations: [
@@ -21,7 +28,11 @@ import {APP_ROUTING} from './app.routing';
         NavbarComponent,
         HomeComponent,
         UsersComponent,
-        PostsComponent
+        PostsComponent,
+        AddUserComponent
+    ],
+    providers: [
+        UserService
     ],
     bootstrap: [AppComponent]
 })
