@@ -13,11 +13,6 @@ export class AddUserComponent implements DirtyChecker {
     constructor(private _formBuilder: FormBuilder, 
     private _userService: UserService,
     private _router: Router) {
-        let user = this._formBuilder.group({
-            name: ['', Validators.required],
-            email: ['', Validators.compose([EmailValidator.validEmailId])],
-            phone: ''
-        });
 
         let address = this._formBuilder.group({
             street: '',
@@ -25,7 +20,12 @@ export class AddUserComponent implements DirtyChecker {
             city: '',
             zipcode: ''
         })
-        this.form = this._formBuilder.group({ user, address });
+        this.form = this._formBuilder.group({ 
+            name: ['', Validators.required],
+            email: ['', Validators.compose([EmailValidator.validEmailId])],
+            phone: '',
+            address 
+        });
     }
 
     isDirty(): boolean {
@@ -33,13 +33,14 @@ export class AddUserComponent implements DirtyChecker {
     }
 
     onSave() {
-        console.log('Clicked on save');
         this._userService
         .createNewUser(this.form.value)
         .subscribe(
             null, 
             null, 
             () => {
+                //Reset values on form so that it is marked a pristine
+                this.form.reset();
                 this._router.navigateByUrl('/users');
             }
         );
